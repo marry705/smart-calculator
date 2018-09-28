@@ -1,26 +1,35 @@
 class SmartCalculator {
   constructor(initialValue) {
-    // your implementation
+      this._number = ' ' + initialValue;
   }
 
-  add(number) {
-    // your implementation
-  }
-  
-  subtract(number) {
-    // your implementation
+  toString() { // переопределение бызовой функции
+    return eval(this._number);
   }
 
-  multiply(number) {
-    // your implementation
+  add(operand = 0) {
+      this._number = this._number + '+' + operand;
+      return this; // для последовательного вызова функции
   }
 
-  devide(number) {
-    // your implementation
+  subtract(operand = 0){
+      this._number = this._number + '-' + operand;
+      return this;
   }
 
-  pow(number) {
-    // your implementation
+  multiply(operand = 1) {
+      this._number = this._number + '*' + operand;
+      return this;
+  }
+
+  devide(operand = 1){
+    this._number = this._number + '/' + operand;
+      return this;
+  }
+
+  pow(operand = 1){
+      this._number = this._number + '**' + operand;
+      return this;
   }
 }
 
